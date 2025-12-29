@@ -5,21 +5,12 @@
     <p>Stay organized. Stay productive.</p>
     <button class="cta-button" (click)="goToTasks()">View My Tasks</button>
   </section>
+<app-calendar
+  [events]="calendarEvents"
+  (daySelected)="onDaySelected($event)">
+</app-calendar>
 
-  <section class="features">
-    <div class="feature-card">
-      <h3>Create Tasks</h3>
-      <p>Easily add new tasks with deadlines and categories.</p>
-    </div>
-    <div class="feature-card">
-      <h3>Track Progress</h3>
-      <p>Monitor your daily, weekly, or project-based progress.</p>
-    </div>
-    <div class="feature-card">
-      <h3>Customize</h3>
-      <p>Sort, filter, and organize your tasks the way you like.</p>
-    </div>
-  </section>
+  
 </main>
 
 <footer>

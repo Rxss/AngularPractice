@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import dayGridPlugin from '@fullcalendar/daygrid';
-import interactionPlugin from '@fullcalendar/interaction';
-import { CalendarOptions } from '@fullcalendar/core';
+import interactionPlugin, { DateClickArg } from '@fullcalendar/interaction';
+import { CalendarOptions, EventInput } from '@fullcalendar/core';
 
 @Component({
   selector: 'app-calendar',
@@ -12,18 +12,21 @@ import { CalendarOptions } from '@fullcalendar/core';
 })
 export class Calendar {
 
+  @Input() events: EventInput[] = [];
+
+  // rename to avoid confusion with DOM events
+  @Output() daySelected = new EventEmitter<string>();
+
   calendarOptions: CalendarOptions = {
     plugins: [dayGridPlugin, interactionPlugin],
     initialView: 'dayGridMonth',
-
-    selectable: true,
-    dateClick: this.onDateClick.bind(this),
-    events: [
-      { title: 'Task 1', date: '2025-12-29' }
-    ]
+    dateClick: (arg: DateClickArg) => this.daySelected.emit(arg.dateStr),
   };
 
-  onDateClick(arg: any) {
-    alert(`Clicked date: ${arg.dateStr}`);
+  ngOnChanges(): void {
+    this.calendarOptions = {
+      ...this.calendarOptions,
+      events: this.events
+    };
   }
 }
