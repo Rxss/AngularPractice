@@ -1,50 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Task Manager App</title>
-  <link rel="stylesheet" href="app.css" />
-</head>
-<body>
-  <header>
-    <h1>Task Manager</h1>
-    <nav>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Tasks</a></li>
-        <li><a href="#">Profile</a></li>
-        <li><a href="#">Logout</a></li>
-      </ul>
-    </nav>
-  </header>
+<header>
+  <h1>Planner</h1>
+  <nav>
+    <ul>
+      <li><a routerLink="/home">Home</a></li>
+      <li><a routerLink="/tasks">Tasks</a></li>
+      <li><a routerLink="/profile">Profile</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <main>
-    <section class="welcome">
-      <h2>Welcome to Your Task Manager</h2>
-      <p>Stay organized. Stay productive.</p>
-      <a href="#" class="cta-button">View My Tasks</a>
-    </section>
-
-    <section class="features">
-      <div class="feature-card">
-        <h3>Create Tasks</h3>
-        <p>Easily add new tasks with deadlines and categories.</p>
-      </div>
-      <div class="feature-card">
-        <h3>Track Progress</h3>
-        <p>Monitor your daily, weekly, or project-based progress.</p>
-      </div>
-      <div class="feature-card">
-        <h3>Customize</h3>
-        <p>Sort, filter, and organize your tasks the way you like.</p>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 Task Manager App. All rights reserved.</p>
-  </footer>
-</body>
-</html>
-
+<router-outlet></router-outlet>
