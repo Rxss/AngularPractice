@@ -1,13 +1,12 @@
 import { Component, signal } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
-import { FullCalendarModule } from '@fullcalendar/angular';
-import dayGridPlugin from '@fullcalendar/daygrid';
-import interactionPlugin from '@fullcalendar/interaction';
+import { Footer } from './footer/footer';
+import { Header } from './header/header';
 
 @Component({
   selector: 'app-root', 
   standalone: true,
-  imports: [RouterOutlet, RouterLink],
+  imports: [RouterOutlet, RouterLink, Header, Footer],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

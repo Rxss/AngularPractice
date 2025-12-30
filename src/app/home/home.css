@@ -97,3 +97,21 @@ footer {
   background-color: #eee;
   margin-top: 40px;
 }
+
+.planner-card {
+ background: #e0e5ec;
+    border-radius: 30px;
+    padding: 50px 40px;
+    box-shadow: 
+        20px 20px 60px #bec3cf,
+        -20px -20px 60px #ffffff;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.welcome {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+

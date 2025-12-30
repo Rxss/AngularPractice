@@ -1,18 +1,13 @@
-
 <main>
-  <section class="welcome">
-    <h2>Welcome to Your Task Planner</h2>
-    <p>Stay organized. Stay productive.</p>
-    <button class="cta-button" (click)="goToTasks()">View My Tasks</button>
+  <section class="planner-card">
+    <section class="welcome">
+      <h2>Welcome to Your Task Planner</h2>
+      <p>Stay organized. Stay productive.</p>
+    </section>
+
+    <app-calendar
+      [events]="calendarEvents"
+      (daySelected)="onDaySelected($event)">
+    </app-calendar>
   </section>
-<app-calendar
-  [events]="calendarEvents"
-  (daySelected)="onDaySelected($event)">
-</app-calendar>
-
-  
 </main>
-
-<footer>
-  <p>&copy; 2025 Task Manager App. All rights reserved.</p>
-</footer>
